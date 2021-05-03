@@ -10,6 +10,10 @@
   width: 110px;
   transition: filter 0.3s ease-in;
 }
+.button.zero {
+  width: 240px;
+  grid-column: 1 / span 2;
+}
 
 .button:active,
 .button:focus {

@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Button: React.FC<Props> = ({ value }) => {
-  return <div className="button">{value}</div>;
+  return <div className={`button ${value === '0' ? 'zero' : ''}`}>{value}</div>;
 };
 
 export default Button;
