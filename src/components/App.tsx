@@ -12,6 +12,13 @@ const App = () => {
     ) {
       setDisplayValue(String(e.currentTarget.textContent));
     }
+    if (
+      displayValue !== '0' &&
+      e.currentTarget.classList[1] !== 'function' &&
+      e.currentTarget.classList[1] !== 'operator'
+    ) {
+      setDisplayValue(displayValue + String(e.currentTarget.textContent));
+    }
   };
 
   return (
