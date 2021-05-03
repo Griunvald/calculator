@@ -6,7 +6,12 @@ const App = () => {
   const [displayValue, setDisplayValue] = useState('0');
 
   const handleOnClick = (e: MouseEvent): any => {
-    console.log(e.currentTarget.textContent);
+    if (
+      e.currentTarget.classList[1] !== 'function' &&
+      e.currentTarget.classList[1] !== 'operator'
+    ) {
+      setDisplayValue(String(e.currentTarget.textContent));
+    }
   };
 
   return (
