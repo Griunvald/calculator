@@ -24,7 +24,9 @@ const App = () => {
   return (
     <div data-test="component-app" className="App">
       <div className="container">
-        <div className="display">{displayValue}</div>
+        <div className="display" data-test="display">
+          {displayValue}
+        </div>
         <div className="body">
           <Button
             onClick={handleOnClick}
@@ -62,7 +64,12 @@ const App = () => {
             value="—"
             className="button operator"
           />
-          <Button onClick={handleOnClick} value="1" className="button" />
+          <Button
+            onClick={handleOnClick}
+            value="1"
+            className="button"
+            data-test="button-1"
+          />
           <Button onClick={handleOnClick} value="2" className="button" />
           <Button onClick={handleOnClick} value="3" className="button" />
           <Button
