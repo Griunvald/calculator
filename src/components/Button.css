@@ -19,3 +19,13 @@
 .button:focus {
   filter: brightness(120%);
 }
+
+.button.operator {
+  background: orange;
+  color: white;
+}
+
+.button.function {
+  background: grey;
+  color: black;
+}
