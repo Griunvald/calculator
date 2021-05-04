@@ -3,9 +3,10 @@ import Button from '../components/Button';
 import './App.css';
 
 const App = () => {
-  const [displayValue, setDisplayValue] = useState('0');
+  const [displayValue, setDisplayValue] = useState<string | number>('0');
   const [operator, setOperator] = useState<string | null>(null);
   const [pending, setPending] = useState<boolean>(false);
+  const [savedValue, setSavedValue] = useState<string | null | number>(null);
 
   const handleOnClick = (e: MouseEvent): any => {
     if (
@@ -20,10 +21,19 @@ const App = () => {
       e.currentTarget.classList[1] !== 'operator'
     ) {
       setDisplayValue(displayValue + String(e.currentTarget.textContent));
+      if (pending === true) {
+        setDisplayValue('' + String(e.currentTarget.textContent));
+      }
     }
     if (String(e.currentTarget.classList[1]) === 'operator') {
       setOperator(String(e.currentTarget.textContent));
       setPending(true);
+      setSavedValue(displayValue);
+    }
+
+    if (String(String(e.currentTarget.textContent)) === 'AC') {
+      setDisplayValue('0');
+      setSavedValue(null);
     }
   };
 
@@ -53,6 +63,7 @@ const App = () => {
             onClick={handleOnClick}
             value="÷"
             className="button operator"
+            data-test="button-plus"
           />
           <Button onClick={handleOnClick} value="7" className="button" />
           <Button onClick={handleOnClick} value="8" className="button" />
