@@ -4,6 +4,8 @@ import './App.css';
 
 const App = () => {
   const [displayValue, setDisplayValue] = useState('0');
+  const [operator, setOperator] = useState<string | null>(null);
+  const [pending, setPending] = useState<boolean>(false);
 
   const handleOnClick = (e: MouseEvent): any => {
     if (
@@ -18,6 +20,10 @@ const App = () => {
       e.currentTarget.classList[1] !== 'operator'
     ) {
       setDisplayValue(displayValue + String(e.currentTarget.textContent));
+    }
+    if (String(e.currentTarget.classList[1]) === 'operator') {
+      setOperator(String(e.currentTarget.textContent));
+      setPending(true);
     }
   };
 
