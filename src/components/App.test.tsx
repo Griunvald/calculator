@@ -44,3 +44,17 @@ test('clicking on the button twice appends 1 to 1', () => {
   const display = findByTestAttr(wrapper, 'display').text();
   expect(display).toBe('11');
 });
+
+test('clicking on the button twice after + operator appends 1 to 1', () => {
+  const wrapper = setup();
+  const button = findByTestAttr(wrapper, 'button-1');
+
+  button.simulate('click');
+  const operatorButton = findByTestAttr(wrapper, 'button-plus');
+  operatorButton.simulate('click');
+  button.simulate('click');
+  button.simulate('click');
+
+  const display = findByTestAttr(wrapper, 'display').text();
+  expect(display).toBe('11');
+});
