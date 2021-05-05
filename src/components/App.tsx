@@ -64,7 +64,6 @@ const App = () => {
             onClick={handleOnClick}
             value="÷"
             className="button operator"
-            data-test="button-plus"
           />
           <Button onClick={handleOnClick} value="7" className="button" />
           <Button onClick={handleOnClick} value="8" className="button" />
@@ -94,6 +93,7 @@ const App = () => {
             onClick={handleOnClick}
             value="+"
             className="button operator"
+            data-test="button-plus"
           />
           <Button onClick={handleOnClick} value="0" className="button zero" />
           <Button onClick={handleOnClick} value="." className="button" />
