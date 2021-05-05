@@ -36,6 +36,10 @@ const App = () => {
       setDisplayValue('0');
       setSavedValue(null);
     }
+    if (String(String(e.currentTarget.textContent)) === '=' && savedValue) {
+      setDisplayValue((Number(savedValue) + Number(displayValue)).toString());
+      setSavedValue(null);
+    }
   };
 
   return (
