@@ -23,6 +23,7 @@ const App = () => {
       setDisplayValue(displayValue + String(e.currentTarget.textContent));
       if (pending === true) {
         setDisplayValue('' + String(e.currentTarget.textContent));
+        setPending(false);
       }
     }
     if (String(e.currentTarget.classList[1]) === 'operator') {
