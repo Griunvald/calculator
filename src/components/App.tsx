@@ -7,6 +7,20 @@ const App = () => {
   const [operator, setOperator] = useState<string | null>(null);
   const [pending, setPending] = useState<boolean>(false);
   const [savedValue, setSavedValue] = useState<string | null | number>(null);
+  const operations = (operator: string) => {
+    if (operator === '+') {
+      setDisplayValue((Number(savedValue) + Number(displayValue)).toString());
+    }
+    if (operator === '—') {
+      setDisplayValue((Number(savedValue) - Number(displayValue)).toString());
+    }
+    if (operator === '÷') {
+      setDisplayValue((Number(savedValue) / Number(displayValue)).toString());
+    }
+    if (operator === '×') {
+      setDisplayValue((Number(savedValue) * Number(displayValue)).toString());
+    }
+  };
 
   const handleOnClick = (e: MouseEvent): any => {
     if (
@@ -37,7 +51,8 @@ const App = () => {
       setSavedValue(null);
     }
     if (String(String(e.currentTarget.textContent)) === '=' && savedValue) {
-      setDisplayValue((Number(savedValue) + Number(displayValue)).toString());
+      // setDisplayValue((Number(savedValue) + Number(displayValue)).toString());
+      operations(String(operator));
       setSavedValue(null);
     }
   };
