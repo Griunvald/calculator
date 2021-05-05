@@ -5,7 +5,6 @@ import './App.css';
 const App = () => {
   const [displayValue, setDisplayValue] = useState<string | number>('0');
   const [operator, setOperator] = useState<string | null>(null);
-  const [functionValue, setFunctionValue] = useState<string | null>(null);
   const [pending, setPending] = useState<boolean>(false);
   const [savedValue, setSavedValue] = useState<string | null | number>(null);
   const operations = (operator: string) => {
@@ -47,16 +46,12 @@ const App = () => {
       setSavedValue(displayValue);
     }
 
-    if (String(e.currentTarget.classList[1]) === 'function') {
-      setFunctionValue(String(e.currentTarget.textContent));
-      setPending(true);
-      setDisplayValue((Number(displayValue) / 100).toString());
-      setPending(false);
-    }
-
     if (String(e.currentTarget.textContent) === 'AC') {
       setDisplayValue('0');
       setSavedValue(null);
+    }
+    if (String(e.currentTarget.textContent) === '%') {
+      setDisplayValue((Number(displayValue) / 100).toString());
     }
     if (String(e.currentTarget.textContent) === '=' && savedValue) {
       operations(String(operator));
