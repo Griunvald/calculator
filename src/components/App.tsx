@@ -101,6 +101,7 @@ const App = () => {
             onClick={handleOnClick}
             value="="
             className="button operator"
+            data-test="button-equals"
           />
         </div>
       </div>
