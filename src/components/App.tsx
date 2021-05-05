@@ -54,11 +54,11 @@ const App = () => {
       setPending(false);
     }
 
-    if (String(String(e.currentTarget.textContent)) === 'AC') {
+    if (String(e.currentTarget.textContent) === 'AC') {
       setDisplayValue('0');
       setSavedValue(null);
     }
-    if (String(String(e.currentTarget.textContent)) === '=' && savedValue) {
+    if (String(e.currentTarget.textContent) === '=' && savedValue) {
       operations(String(operator));
       setSavedValue(null);
     }
