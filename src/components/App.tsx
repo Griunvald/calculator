@@ -29,6 +29,7 @@ const App = () => {
     ) {
       setDisplayValue(String(e.currentTarget.textContent));
     }
+
     if (
       displayValue !== '0' &&
       e.currentTarget.classList[1] !== 'function' &&
@@ -40,6 +41,7 @@ const App = () => {
         setPending(false);
       }
     }
+
     if (String(e.currentTarget.classList[1]) === 'operator') {
       setOperator(String(e.currentTarget.textContent));
       setPending(true);
@@ -50,9 +52,15 @@ const App = () => {
       setDisplayValue('0');
       setSavedValue(null);
     }
+
+    if (String(e.currentTarget.textContent) === '±') {
+      setDisplayValue(Number(-displayValue));
+    }
+
     if (String(e.currentTarget.textContent) === '%') {
       setDisplayValue((Number(displayValue) / 100).toString());
     }
+
     if (String(e.currentTarget.textContent) === '=' && savedValue) {
       operations(String(operator));
       setSavedValue(null);
