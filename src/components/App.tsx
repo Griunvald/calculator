@@ -57,6 +57,13 @@ const App = () => {
       setDisplayValue(Number(-displayValue));
     }
 
+    if (String(e.currentTarget.textContent) === '.') {
+      setDisplayValue(Number(displayValue));
+      if (String(displayValue).indexOf('.') === -1) {
+        setDisplayValue(Number(displayValue) + '.');
+      }
+    }
+
     if (String(e.currentTarget.textContent) === '%') {
       setDisplayValue((Number(displayValue) / 100).toString());
     }
