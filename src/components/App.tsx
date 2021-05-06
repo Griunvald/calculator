@@ -82,9 +82,11 @@ const App = () => {
   return (
     <div data-test="component-app" className="App">
       <div className="container">
+        <div className="operator-display">{operator}</div>
         <div className="display" data-test="display">
           {displayValue}
         </div>
+
         <div className="body">
           <Button
             onClick={handleOnClick}
