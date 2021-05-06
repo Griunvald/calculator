@@ -51,6 +51,8 @@ const App = () => {
     if (String(e.currentTarget.textContent) === 'AC') {
       setDisplayValue('0');
       setSavedValue(null);
+      setPending(false);
+      setOperator(null);
     }
 
     if (String(e.currentTarget.textContent) === '±') {
