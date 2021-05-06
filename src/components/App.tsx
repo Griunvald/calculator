@@ -72,6 +72,9 @@ const App = () => {
       operations(String(operator));
       setSavedValue(null);
     }
+    if (String(displayValue).length === 20) {
+      setDisplayValue(Math.fround(Number(displayValue)));
+    }
   };
 
   return (
