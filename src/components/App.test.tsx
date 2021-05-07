@@ -183,4 +183,37 @@ describe('Operator buttons', () => {
     const display = findByTestAttr(wrapper, 'display').text();
     expect(display).toBe('1');
   });
+
+  test('2 x 2 = 4', () => {
+    const wrapper = setup();
+    const button = findByTestAttr(wrapper, 'button-2');
+    button.simulate('click');
+
+    const multiplyButton = findByTestAttr(wrapper, 'button-multiply');
+    multiplyButton.simulate('click');
+
+    button.simulate('click');
+
+    const equalsButton = findByTestAttr(wrapper, 'button-equals');
+    equalsButton.simulate('click');
+
+    const display = findByTestAttr(wrapper, 'display').text();
+    expect(display).toBe('4');
+  });
+  test('2 / 2 = 1', () => {
+    const wrapper = setup();
+    const button = findByTestAttr(wrapper, 'button-2');
+    button.simulate('click');
+
+    const multiplyButton = findByTestAttr(wrapper, 'button-divide');
+    multiplyButton.simulate('click');
+
+    button.simulate('click');
+
+    const equalsButton = findByTestAttr(wrapper, 'button-equals');
+    equalsButton.simulate('click');
+
+    const display = findByTestAttr(wrapper, 'display').text();
+    expect(display).toBe('1');
+  });
 });

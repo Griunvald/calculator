@@ -112,6 +112,7 @@ const App = () => {
             onClick={handleOnClick}
             value="÷"
             className="button operator"
+            data-test="button-divide"
           />
           <Button onClick={handleOnClick} value="7" className="button" />
           <Button onClick={handleOnClick} value="8" className="button" />
@@ -120,6 +121,7 @@ const App = () => {
             onClick={handleOnClick}
             value="×"
             className="button operator"
+            data-test="button-multiply"
           />
           <Button onClick={handleOnClick} value="4" className="button" />
           <Button onClick={handleOnClick} value="5" className="button" />
