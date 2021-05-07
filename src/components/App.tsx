@@ -82,7 +82,9 @@ const App = () => {
   return (
     <div data-test="component-app" className="App">
       <div className="container">
-        <div className="operator-display">{operator}</div>
+        <div className="operator-display" data-test="operator-display">
+          {operator}
+        </div>
         <div className="display" data-test="display">
           {displayValue}
         </div>
@@ -92,16 +94,19 @@ const App = () => {
             onClick={handleOnClick}
             value="AC"
             className="button function"
+            data-test="button-ac"
           />
           <Button
             onClick={handleOnClick}
             value="±"
             className="button function"
+            data-test="plus-minus-button"
           />
           <Button
             onClick={handleOnClick}
             value="%"
             className="button function"
+            data-test="percent-button"
           />
           <Button
             onClick={handleOnClick}
@@ -123,6 +128,7 @@ const App = () => {
             onClick={handleOnClick}
             value="—"
             className="button operator"
+            data-test="button-minus"
           />
           <Button
             onClick={handleOnClick}
@@ -130,7 +136,12 @@ const App = () => {
             className="button"
             data-test="button-1"
           />
-          <Button onClick={handleOnClick} value="2" className="button" />
+          <Button
+            onClick={handleOnClick}
+            value="2"
+            className="button"
+            data-test="button-2"
+          />
           <Button onClick={handleOnClick} value="3" className="button" />
           <Button
             onClick={handleOnClick}
@@ -139,7 +150,12 @@ const App = () => {
             data-test="button-plus"
           />
           <Button onClick={handleOnClick} value="0" className="button zero" />
-          <Button onClick={handleOnClick} value="." className="button" />
+          <Button
+            onClick={handleOnClick}
+            value="."
+            className="button"
+            data-test="decimal-point-button"
+          />
           <Button
             onClick={handleOnClick}
             value="="
