@@ -205,8 +205,8 @@ describe('Operator buttons', () => {
     const button = findByTestAttr(wrapper, 'button-2');
     button.simulate('click');
 
-    const multiplyButton = findByTestAttr(wrapper, 'button-divide');
-    multiplyButton.simulate('click');
+    const divideButton = findByTestAttr(wrapper, 'button-divide');
+    divideButton.simulate('click');
 
     button.simulate('click');
 
