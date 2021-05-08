@@ -216,4 +216,29 @@ describe('Operator buttons', () => {
     const display = findByTestAttr(wrapper, 'display').text();
     expect(display).toBe('1');
   });
+
+  test('Chaining multiple operations: +, *, /', () => {
+    const wrapper = setup();
+    const buttonTwo = findByTestAttr(wrapper, 'button-2');
+    buttonTwo.simulate('click');
+
+    const plusButton = findByTestAttr(wrapper, 'button-plus');
+    plusButton.simulate('click');
+    buttonTwo.simulate('click');
+
+    const multiplyButton = findByTestAttr(wrapper, 'button-multiply');
+    multiplyButton.simulate('click');
+    buttonTwo.simulate('click');
+
+    const divideButton = findByTestAttr(wrapper, 'button-divide');
+    divideButton.simulate('click');
+
+    buttonTwo.simulate('click');
+
+    const equalsButton = findByTestAttr(wrapper, 'button-equals');
+    equalsButton.simulate('click');
+
+    const display = findByTestAttr(wrapper, 'display').text();
+    expect(display).toBe('1');
+  });
 });
