@@ -26,3 +26,7 @@ Run `npm test` from working directory
 ```bash
 npm test
 ```
+
+## Screenshot
+
+![look at this](https://github.com/Griunvald/calculator/blob/main/demo/calculator-demo.png)
